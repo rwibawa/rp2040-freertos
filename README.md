@@ -1,4 +1,5 @@
 # rp2040-freertos
+Program Raspberry Pi Pico with FreeRTOS.
 
 * [tutorial video](https://youtu.be/5pUY7xVE2gU)
 * [sample github](https://github.com/lowlevellearning/rp2040-freertos)
@@ -28,6 +29,7 @@ $ export PICO_SDK_PATH=~/workspace_arm/pico-sdk
 $ mkdir build
 $ cd build/
 /build$ cmake ..
+/build$ make
 /build$ ll
 total 968
 drwxr-xr-x 7 ryan ryan   4096 Sep 23 18:57 ./
@@ -48,7 +50,7 @@ drwxr-xr-x 3 ryan ryan   4096 Sep 23 18:56 generated/
 drwxr-xr-x 6 ryan ryan   4096 Sep 23 18:56 pico-sdk/
 drwxr-xr-x 3 ryan ryan   4096 Sep 23 18:57 pioasm/
 
-$ cp blink.uf2 /media/user/RPI-RP2/
+/build$ cp blink.uf2 /media/user/RPI-RP2/
 ```
 
 ## `git` submodule commands
