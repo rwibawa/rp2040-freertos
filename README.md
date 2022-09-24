@@ -2,6 +2,9 @@
 
 * [tutorial video](https://youtu.be/5pUY7xVE2gU)
 * [sample github](https://github.com/lowlevellearning/rp2040-freertos)
+* [FreeRTOS Kernel Developer Docs](https://www.freertos.org/features.html)
+* [Pico SDK examples](https://raspberrypi.github.io/pico-sdk-doxygen/examples_page.html)
+* [Pico SDK github](https://github.com/raspberrypi/pico-sdk)
 
 # 1. Setup
 ```sh
@@ -46,4 +49,15 @@ drwxr-xr-x 6 ryan ryan   4096 Sep 23 18:56 pico-sdk/
 drwxr-xr-x 3 ryan ryan   4096 Sep 23 18:57 pioasm/
 
 $ cp blink.uf2 /media/user/RPI-RP2/
+```
+
+## `git` submodule commands
+```sh
+# add shallow submodule
+git submodule add --depth 1 <repo-url> <path>
+git config -f .gitmodules submodule.<path>.shallow true
+
+# later unshallow
+git config -f .gitmodules submodule.<path>.shallow false
+git submodule update <path>
 ```
