@@ -7,34 +7,40 @@
 #include "FreeRTOSConfig.h"
 #include "task.h"
 
-#define LED_PIN 25
-#define RED_LED 0
+#define GREEN_LED 15
+#define RED_LED 16
 
 #define GPIO_ON   1
 #define GPIO_OFF  0
 
 void GreenLEDTask(void *param)
 {
-  gpio_put(LED_PIN, GPIO_ON);
-  vTaskDelay(1000);
-  gpio_put(LED_PIN, GPIO_OFF);
-  vTaskDelay(1000);
+  while (true)
+  {
+    gpio_put(GREEN_LED, GPIO_ON);
+    vTaskDelay(1000);
+    gpio_put(GREEN_LED, GPIO_OFF);
+    vTaskDelay(1000);
+  }
 }
 
 void RedLEDTask(void *param)
 {
-  gpio_put(RED_LED, GPIO_ON);
-  vTaskDelay(1000);
-  gpio_put(RED_LED, GPIO_OFF);
-  vTaskDelay(1000);
+  while (true)
+  {
+    gpio_put(RED_LED, GPIO_ON);
+    vTaskDelay(1000);
+    gpio_put(RED_LED, GPIO_OFF);
+    vTaskDelay(1000);
+  }
 }
 
 int main()
 {
   stdio_init_all();
 
-  gpio_init(LED_PIN);
-  gpio_set_dir(LED_PIN, GPIO_OUT);
+  gpio_init(GREEN_LED);
+  gpio_set_dir(GREEN_LED, GPIO_OUT);
 
   gpio_init(RED_LED);
   gpio_set_dir(RED_LED, GPIO_OUT);
